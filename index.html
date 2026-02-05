@@ -1,135 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>M Farooq Ahmad | UI/UX Designer</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M Farooq Ahmad | UI/UX Designer</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ========== GLOBAL ========== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#222;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ========== HEADER ========== */
+header{
+  border-bottom:1px solid #eee;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 0;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:#8e44ad;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
+.btn{
+  background:#8e44ad;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* ========== HERO ========== */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 0;
+  gap:40px;
+}
+
+.hero-text{
+  max-width:550px;
+}
+
+.hero-text h1{
+  font-size:38px;
+}
+
+.hero-text h2{
+  font-size:32px;
+  margin:10px 0;
+}
+
+.hero-text h2 span{
+  color:#8e44ad;
+}
+
+.hero-text p{
+  margin:15px 0 25px;
+  color:#555;
+}
+
+.hero-img img{
+  width:280px;
+  border-radius:25px;
+}
+
+/* ========== SECTION TITLE ========== */
+.section-title{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:50px;
+}
+
+/* ========== SKILLS ========== */
+.skills{
+  max-width:700px;
+  margin:auto;
+}
+
+.skill{
+  margin-bottom:20px;
+}
+
+.skill span{
+  font-weight:500;
+}
+
+.bar{
+  height:8px;
+  background:#eee;
+  border-radius:10px;
+  margin-top:5px;
+}
+
+.bar div{
+  height:8px;
+  background:#8e44ad;
+  border-radius:10px;
+}
+
+/* ========== SERVICES ========== */
+.services{
+  padding:80px 0;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+.service-card{
+  background:#fff;
+  border:1px solid #eee;
+  padding:30px;
+  border-radius:15px;
+  transition:0.3s ease;
+  cursor:pointer;
+}
+
+.service-card h3{
+  margin-bottom:10px;
+}
+
+/* 🔥 HOVER EFFECT (as you asked) */
+.service-card:hover{
+  background:#8e44ad;
+  color:#fff;
+  transform:translateY(-5px);
+}
+
+/* ========== PORTFOLIO ========== */
+.portfolio{
+  padding:80px 0;
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.project{
+  background:#f4f4f4;
+  padding:50px;
+  text-align:center;
+  border-radius:15px;
+}
+
+/* ========== CONTACT ========== */
+.contact{
+  padding:80px 0;
+}
+
+.contact-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+}
+
+/* ========== FOOTER ========== */
+footer{
+  background:#8e44ad;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:50px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="container nav">
-      <div class="logo">Farooq</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#services">My Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="btn">Download CV</a>
+<header>
+  <div class="container nav">
+    <div class="logo">Farooq</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn">Download CV</a>
+  </div>
+</header>
+
+<section class="hero container">
+  <div class="hero-text">
+    <h1>I am M Farooq Ahmad</h1>
+    <h2>UI & UX <span>Designer</span></h2>
+    <p>Creative UI/UX Designer focused on clean, user-friendly and modern digital experiences.</p>
+    <a href="#contact" class="btn">Hire Me</a>
+  </div>
+
+  <!-- ✅ IMAGE FIXED (relative path) -->
+  <div class="hero-img">
+    <img src="profile.jpg" alt="Farooq Ahmad">
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Why You Hire Me</h2>
+
+  <div class="skills">
+    <div class="skill"><span>UI Design</span><div class="bar"><div style="width:90%"></div></div></div>
+    <div class="skill"><span>Graphic Design</span><div class="bar"><div style="width:85%"></div></div></div>
+    <div class="skill"><span>Web Design</span><div class="bar"><div style="width:80%"></div></div></div>
+    <div class="skill"><span>App Design</span><div class="bar"><div style="width:75%"></div></div></div>
+  </div>
+</section>
+
+<section class="services container">
+  <h2 class="section-title">My Services</h2>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Graphic Design</h3>
+      <p>Creative branding and visual design solutions.</p>
     </div>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero container" id="home">
-    <div class="hero-text">
-      <span class="intro">I am</span>
-      <h1>M Farooq Ahmad</h1>
-      <h2>UI & UX <span>Designer</span></h2>
-      <p>
-        Creative UI/UX Designer focused on creating clean, user-friendly
-        and engaging digital experiences.
-      </p>
-      <a href="#contact" class="btn primary">Hire Me</a>
+    <div class="service-card">
+      <h3>UI / UX Design</h3>
+      <p>User-centered interfaces for web & mobile.</p>
     </div>
-
-    <div class="hero-img">
-      <img src="assets/images/profile.png" alt="Farooq Ahmad">
+    <div class="service-card">
+      <h3>Web Design</h3>
+      <p>Modern, responsive website designs.</p>
     </div>
-  </section>
-
-  <!-- ===== ABOUT / SKILLS ===== -->
-  <section class="about container" id="about">
-    <h2 class="section-title">Why You Hire Me</h2>
-
-    <div class="skills">
-      <div class="skill">
-        <span>UI Design</span>
-        <div class="bar"><div style="width:90%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Graphic Design</span>
-        <div class="bar"><div style="width:85%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Web Design</span>
-        <div class="bar"><div style="width:80%"></div></div>
-      </div>
-      <div class="skill">
-        <span>App Design</span>
-        <div class="bar"><div style="width:75%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Video Editing</span>
-        <div class="bar"><div style="width:70%"></div></div>
-      </div>
+    <div class="service-card">
+      <h3>App Design</h3>
+      <p>Clean and functional mobile app UI.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="services container" id="services">
-    <h2 class="section-title">The Services I Provide</h2>
+<section class="portfolio container">
+  <h2 class="section-title">Latest Projects</h2>
+  <div class="project-grid">
+    <div class="project">App Design</div>
+    <div class="project">Web Design</div>
+    <div class="project">UI Design</div>
+  </div>
+</section>
 
-    <div class="service-grid">
-      <div class="card">
-        <h3>Graphic Design</h3>
-        <p>Creative designs that communicate your brand effectively.</p>
-      </div>
-      <div class="card active">
-        <h3>UI / UX Design</h3>
-        <p>User-centered designs for web & mobile applications.</p>
-      </div>
-      <div class="card">
-        <h3>Web Design</h3>
-        <p>Modern and responsive website designs.</p>
-      </div>
-      <div class="card">
-        <h3>App Design</h3>
-        <p>Clean and functional mobile app interfaces.</p>
-      </div>
+<section class="contact container" id="contact">
+  <h2 class="section-title">Let’s Make Something Together</h2>
+
+  <div class="contact-box">
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button class="btn">Send Message</button>
+    </form>
+
+    <div>
+      <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
+      <p><strong>Phone:</strong> +92 314 1683402</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== PORTFOLIO ===== -->
-  <section class="portfolio container" id="portfolio">
-    <h2 class="section-title">Latest Projects</h2>
-
-    <div class="project-grid">
-      <div class="project">App Design</div>
-      <div class="project">Web Design</div>
-      <div class="project">UI Design</div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact container" id="contact">
-    <h2 class="section-title">Let’s Make Something Together</h2>
-
-    <div class="contact-box">
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit" class="btn primary">Send</button>
-      </form>
-
-      <div class="contact-info">
-        <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
-        <p><strong>Phone:</strong> +92 314 1683402</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <p>© 2025 Farooq. All Rights Reserved.</p>
-  </footer>
+<footer>
+  © 2025 M Farooq Ahmad — All Rights Reserved
+</footer>
 
 </body>
 </html>
