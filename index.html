@@ -5,11 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M Farooq Ahmad | UI/UX Designer</title>
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ========== GLOBAL ========== */
+:root{
+  --primary:#8e44ad;
+  --dark:#222;
+  --light:#ffffff;
+  --gray:#555;
+}
+
+/* ===== RESET ===== */
 *{
   margin:0;
   padding:0;
@@ -17,71 +23,107 @@
   font-family:'Poppins',sans-serif;
 }
 
-body{
-  background:#ffffff;
-  color:#222;
+html{
+  scroll-behavior:smooth;
 }
 
+body{
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
+}
+
+/* ===== COMMON ===== */
 .container{
-  width:90%;
+  width:92%;
   max-width:1200px;
   margin:auto;
 }
 
-/* ========== HEADER ========== */
+section{
+  padding:80px 0;
+}
+
+h1,h2,h3{
+  line-height:1.3;
+}
+
+.section-title{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:50px;
+}
+
+/* ===== HEADER ===== */
 header{
+  position:sticky;
+  top:0;
+  background:#fff;
   border-bottom:1px solid #eee;
+  z-index:1000;
 }
 
 .nav{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  padding:20px 0;
+  align-items:center;
+  padding:18px 0;
 }
 
 .logo{
   font-size:22px;
   font-weight:700;
-  color:#8e44ad;
+  color:var(--primary);
 }
 
 nav ul{
   list-style:none;
   display:flex;
-  gap:25px;
+  gap:24px;
 }
 
 nav a{
   text-decoration:none;
   color:#333;
   font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--primary);
 }
 
 .btn{
-  background:#8e44ad;
+  background:var(--primary);
   color:#fff;
-  padding:10px 20px;
+  padding:10px 22px;
   border-radius:25px;
   text-decoration:none;
   font-size:14px;
+  transition:0.3s;
 }
 
-/* ========== HERO ========== */
+.btn:hover{
+  background:#6d2f8c;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ===== HERO ===== */
 .hero{
-  display:flex;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   align-items:center;
-  justify-content:space-between;
-  padding:80px 0;
   gap:40px;
 }
 
-.hero-text{
-  max-width:550px;
-}
-
 .hero-text h1{
-  font-size:38px;
+  font-size:40px;
 }
 
 .hero-text h2{
@@ -90,27 +132,21 @@ nav a{
 }
 
 .hero-text h2 span{
-  color:#8e44ad;
+  color:var(--primary);
 }
 
 .hero-text p{
-  margin:15px 0 25px;
-  color:#555;
+  color:var(--gray);
+  margin:18px 0 28px;
 }
 
 .hero-img img{
-  width:280px;
+  width:100%;
+  max-width:320px;
   border-radius:25px;
 }
 
-/* ========== SECTION TITLE ========== */
-.section-title{
-  text-align:center;
-  font-size:28px;
-  margin-bottom:50px;
-}
-
-/* ========== SKILLS ========== */
+/* ===== SKILLS ===== */
 .skills{
   max-width:700px;
   margin:auto;
@@ -120,28 +156,20 @@ nav a{
   margin-bottom:20px;
 }
 
-.skill span{
-  font-weight:500;
-}
-
 .bar{
-  height:8px;
   background:#eee;
+  height:8px;
   border-radius:10px;
-  margin-top:5px;
+  margin-top:6px;
 }
 
 .bar div{
   height:8px;
-  background:#8e44ad;
+  background:var(--primary);
   border-radius:10px;
 }
 
-/* ========== SERVICES ========== */
-.services{
-  padding:80px 0;
-}
-
+/* ===== SERVICES ===== */
 .service-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -149,48 +177,45 @@ nav a{
 }
 
 .service-card{
-  background:#fff;
   border:1px solid #eee;
   padding:30px;
-  border-radius:15px;
-  transition:0.3s ease;
+  border-radius:16px;
+  background:#fff;
   cursor:pointer;
+  transition:0.3s;
 }
 
-.service-card h3{
-  margin-bottom:10px;
-}
-
-/* 🔥 HOVER EFFECT (as you asked) */
 .service-card:hover{
-  background:#8e44ad;
+  background:var(--primary);
   color:#fff;
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 }
 
-/* ========== PORTFOLIO ========== */
-.portfolio{
-  padding:80px 0;
-}
-
+/* ===== PROJECTS ===== */
 .project-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
 }
 
 .project{
-  background:#f4f4f4;
-  padding:50px;
+  padding:50px 20px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
   text-align:center;
-  border-radius:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* ========== CONTACT ========== */
-.contact{
-  padding:80px 0;
+.project:hover{
+  background:var(--primary);
+  color:#fff;
+  transform:translateY(-6px);
 }
 
+/* ===== CONTACT ===== */
 .contact-box{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -199,34 +224,64 @@ nav a{
 
 input,textarea{
   width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border:1px solid #ccc;
+  padding:14px;
   border-radius:8px;
+  border:1px solid #ccc;
+  margin-bottom:14px;
+  font-size:14px;
 }
 
-button{
-  border:none;
-  cursor:pointer;
+textarea{
+  resize:none;
+  height:120px;
 }
 
-/* ========== FOOTER ========== */
+/* ===== FOOTER ===== */
 footer{
-  background:#8e44ad;
+  background:var(--primary);
   color:#fff;
   text-align:center;
   padding:20px;
-  margin-top:50px;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  .hero{
+  nav ul{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:#fff;
+    width:100%;
     flex-direction:column;
+    align-items:center;
+    display:none;
+    padding:20px 0;
+    border-bottom:1px solid #eee;
+  }
+
+  nav ul.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
     text-align:center;
   }
+
+  .hero-img{
+    order:-1;
+  }
+
   .contact-box{
     grid-template-columns:1fr;
+  }
+
+  section{
+    padding:60px 0;
   }
 }
 </style>
@@ -237,90 +292,88 @@ footer{
 <header>
   <div class="container nav">
     <div class="logo">Farooq</div>
+
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a href="#" class="btn">Download CV</a>
+
+    <a href="https://drive.google.com/file/d/1cychTmTKu35IPrTqI-5I1R9hijGjqEVf/view?usp=sharing" class="btn" target="_blank">Download CV</a>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<section class="hero container">
-  <div class="hero-text">
-    <h1>I am M Farooq Ahmad</h1>
-    <h2>UI & UX <span>Designer</span></h2>
-    <p>Creative UI/UX Designer focused on clean, user-friendly and modern digital experiences.</p>
-    <a href="#contact" class="btn">Hire Me</a>
-  </div>
-
-  <!-- ✅ IMAGE FIXED (relative path) -->
-  <div class="hero-img">
-    <img src="profile.jpg" alt="Farooq Ahmad">
-  </div>
-</section>
-
-<section class="container">
-  <h2 class="section-title">Why You Hire Me</h2>
-
-  <div class="skills">
-    <div class="skill"><span>UI Design</span><div class="bar"><div style="width:90%"></div></div></div>
-    <div class="skill"><span>Graphic Design</span><div class="bar"><div style="width:85%"></div></div></div>
-    <div class="skill"><span>Web Design</span><div class="bar"><div style="width:80%"></div></div></div>
-    <div class="skill"><span>App Design</span><div class="bar"><div style="width:75%"></div></div></div>
-  </div>
-</section>
-
-<section class="services container">
-  <h2 class="section-title">My Services</h2>
-
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Graphic Design</h3>
-      <p>Creative branding and visual design solutions.</p>
+<section id="home">
+  <div class="container hero">
+    <div class="hero-text">
+      <h1>I am M Farooq Ahmad</h1>
+      <h2>UI & UX <span>Designer</span></h2>
+      <p>Creative UI/UX Designer focused on clean and user-friendly digital experiences.</p>
+      <a href="https://www.upwork.com/freelancers/~018a1e37e779ab758a?mp_source=share" class="btn" target="_blank">Hire Me</a>
     </div>
-    <div class="service-card">
-      <h3>UI / UX Design</h3>
-      <p>User-centered interfaces for web & mobile.</p>
-    </div>
-    <div class="service-card">
-      <h3>Web Design</h3>
-      <p>Modern, responsive website designs.</p>
-    </div>
-    <div class="service-card">
-      <h3>App Design</h3>
-      <p>Clean and functional mobile app UI.</p>
+
+    <div class="hero-img">
+      <img src="profile.jpg" alt="Farooq Ahmad">
     </div>
   </div>
 </section>
 
-<section class="portfolio container">
-  <h2 class="section-title">Latest Projects</h2>
-  <div class="project-grid">
-    <div class="project">App Design</div>
-    <div class="project">Web Design</div>
-    <div class="project">UI Design</div>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">Why You Hire Me</h2>
+    <div class="skills">
+      <div class="skill">UI Design<div class="bar"><div style="width:90%"></div></div></div>
+      <div class="skill">Graphic Design<div class="bar"><div style="width:85%"></div></div></div>
+      <div class="skill">Web Design<div class="bar"><div style="width:80%"></div></div></div>
+      <div class="skill">App Design<div class="bar"><div style="width:75%"></div></div></div>
+    </div>
   </div>
 </section>
 
-<section class="contact container" id="contact">
-  <h2 class="section-title">Let’s Make Something Together</h2>
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">My Services</h2>
+    <div class="service-grid">
+      <div class="service-card" onclick="mail()">Graphic Design<br><small>Creative branding solutions</small></div>
+      <div class="service-card" onclick="mail()">UI / UX Design<br><small>User-centered interfaces</small></div>
+      <div class="service-card" onclick="mail()">Web Design<br><small>Modern responsive websites</small></div>
+      <div class="service-card" onclick="mail()">App Design<br><small>Clean mobile UI</small></div>
+    </div>
+  </div>
+</section>
 
-  <div class="contact-box">
-    <form>
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea placeholder="Your Message"></textarea>
-      <button class="btn">Send Message</button>
-    </form>
+<section id="portfolio">
+  <div class="container">
+    <h2 class="section-title">Latest Projects</h2>
+    <div class="project-grid">
+      <div class="project" onclick="openLink('https://www.figma.com/design/gGNoz3cJn51dNnxGoXalhA/Foods')">App Design</div>
+      <div class="project" onclick="openLink('https://www.figma.com/design/eumb6reWfEw5whNKfMNP1a/Farooq-portfolio')">Web Design</div>
+      <div class="project" onclick="openLink('https://www.figma.com/design/anP33idqVer328qFDPumMT/Ali-Shehzad-Web')">UI Design</div>
+    </div>
+  </div>
+</section>
 
-    <div>
-      <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
-      <p><strong>Phone:</strong> +92 314 1683402</p>
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Let’s Make Something Together</h2>
+    <div class="contact-box">
+      <form action="https://formspree.io/f/xwkgrjnd" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button class="btn">Send Message</button>
+      </form>
+
+      <div>
+        <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
+        <p><strong>Phone:</strong> +92 314 1683402</p>
+      </div>
     </div>
   </div>
 </section>
@@ -328,6 +381,20 @@ footer{
 <footer>
   © 2025 M Farooq Ahmad — All Rights Reserved
 </footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+
+function openLink(url){
+  window.open(url,"_blank");
+}
+
+function mail(){
+  window.location.href="mailto:engrmfarooqahmad@gmail.com";
+}
+</script>
 
 </body>
 </html>
