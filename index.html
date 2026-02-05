@@ -376,7 +376,13 @@ footer{
   <div class="container">
     <h2 class="section-title">Let’s Make Something Together</h2>
     <div class="contact-box">
-      <form action="https://formspree.io/f/xwkgrjnd" method="POST">
+      <form onsubmit="sendMail(); return false;">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <textarea id="message" placeholder="Your Message" required></textarea>
+  <button type="submit" class="btn">Send Message</button>
+</form>
+
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
@@ -410,7 +416,26 @@ function openGmail(){
     "_blank"
   );
 }
+
+function sendMail(){
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let gmailURL =
+    "https://mail.google.com/mail/?view=cm&fs=1" +
+    "&to=engrmfarooqahmad@gmail.com" +
+    "&su=Portfolio Contact from " + encodeURIComponent(name) +
+    "&body=" + encodeURIComponent(
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      message
+    );
+
+  window.open(gmailURL, "_blank");
+}
 </script>
+
 
 </body>
 </html>
