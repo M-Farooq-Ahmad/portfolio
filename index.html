@@ -3,285 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M Farooq Ahmad | UI/UX Designer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Engr Farooq Ahmad | Portfolio</title>
 
 <style>
-:root{
-  --primary:#8e44ad;
-  --dark:#222;
-  --light:#ffffff;
-  --gray:#555;
-}
-
-/* ===== RESET ===== */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-  background:var(--light);
-  color:var(--dark);
+  background:#0f172a;
+  color:#e5e7eb;
   line-height:1.6;
 }
 
-/* ===== COMMON ===== */
-.container{
-  width:92%;
-  max-width:1200px;
-  margin:auto;
-}
-
-section{
-  padding:80px 0;
-}
-
-h1,h2,h3{
-  line-height:1.3;
-}
-
-.section-title{
-  text-align:center;
-  font-size:28px;
-  margin-bottom:50px;
-}
-
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 header{
-  position:sticky;
-  top:0;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  z-index:1000;
-}
-
-.nav{
+  padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 0;
+  background:#020617;
 }
 
-.logo{
+header h1{
   font-size:22px;
-  font-weight:700;
-  color:var(--primary);
-}
-
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:24px;
+  color:#38bdf8;
 }
 
 nav a{
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:var(--primary);
-}
-
-.btn{
-  background:var(--primary);
-  color:#fff;
-  padding:10px 22px;
-  border-radius:25px;
+  color:#e5e7eb;
+  margin-left:15px;
   text-decoration:none;
   font-size:14px;
-  transition:0.3s;
 }
 
-.btn:hover{
-  background:#6d2f8c;
-}
-
-/* ===== HAMBURGER ===== */
-.hamburger{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-}
-
-/* ===== HERO ===== */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:40px;
-}
-
-.hero-text h1{
-  font-size:40px;
-}
-
-.hero-text h2{
-  font-size:32px;
-  margin:10px 0;
-}
-
-.hero-text h2 span{
-  color:var(--primary);
-}
-
-.hero-text p{
-  color:var(--gray);
-  margin:18px 0 28px;
-}
-
-.hero-img img{
-  width:100%;
-  max-width:320px;
-  border-radius:25px;
-}
-
-/* ===== SKILLS ===== */
-.skills{
-  max-width:700px;
+/* ================= SECTION ================= */
+section{
+  padding:60px 20px;
+  max-width:1100px;
   margin:auto;
 }
 
-.skill{
-  margin-bottom:20px;
+/* ================= HERO ================= */
+.hero{
+  text-align:center;
 }
 
-.bar{
-  background:#eee;
-  height:8px;
-  border-radius:10px;
-  margin-top:6px;
+.hero h2{
+  font-size:32px;
+  margin-bottom:10px;
 }
 
-.bar div{
-  height:8px;
-  background:var(--primary);
-  border-radius:10px;
+.hero p{
+  color:#94a3b8;
+  font-size:16px;
 }
 
-/* ===== SERVICES ===== */
-.service-grid{
+/* ================= SERVICES ================= */
+.services-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.services-title h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
 }
 
 .service-card{
-  border:1px solid #eee;
-  padding:30px;
-  border-radius:16px;
-  background:#fff;
+  background:#020617;
+  border:1px solid #1e293b;
+  padding:25px;
+  border-radius:12px;
   cursor:pointer;
   transition:0.3s;
 }
 
 .service-card:hover{
-  background:var(--primary);
-  color:#fff;
-  transform:translateY(-6px);
+  transform:translateY(-5px);
+  border-color:#38bdf8;
 }
 
-/* ===== PROJECTS ===== */
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
+.service-card h3{
+  margin-bottom:8px;
+  color:#38bdf8;
+  font-size:18px;
 }
 
-.project{
-  padding:50px 20px;
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:16px;
-  text-align:center;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.project:hover{
-  background:var(--primary);
-  color:#fff;
-  transform:translateY(-6px);
-}
-
-/* ===== CONTACT ===== */
-.contact-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-input,textarea{
-  width:100%;
-  padding:14px;
-  border-radius:8px;
-  border:1px solid #ccc;
-  margin-bottom:14px;
+.service-card p{
+  color:#94a3b8;
   font-size:14px;
 }
 
-textarea{
-  resize:none;
-  height:120px;
-}
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer{
-  background:var(--primary);
-  color:#fff;
+  background:#020617;
+  padding:25px;
   text-align:center;
-  padding:20px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  nav ul{
-    position:absolute;
-    top:70px;
-    right:0;
-    background:#fff;
-    width:100%;
-    flex-direction:column;
-    align-items:center;
-    display:none;
-    padding:20px 0;
-    border-bottom:1px solid #eee;
-  }
+footer p{
+  font-size:14px;
+  color:#94a3b8;
+}
 
-  nav ul.active{
-    display:flex;
+/* ================= RESPONSIVE ================= */
+@media(max-width:600px){
+  .hero h2{
+    font-size:24px;
   }
-
-  .hamburger{
-    display:block;
-  }
-
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .hero-img{
-    order:-1;
-  }
-
-  .contact-box{
-    grid-template-columns:1fr;
-  }
-
   section{
-    padding:60px 0;
+    padding:40px 15px;
   }
 }
 </style>
@@ -290,109 +131,57 @@ footer{
 <body>
 
 <header>
-  <div class="container nav">
-    <div class="logo">Farooq</div>
-
-    <nav>
-      <ul id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <a href="https://drive.google.com/file/d/1cychTmTKu35IPrTqI-5I1R9hijGjqEVf/view?usp=sharing" class="btn" target="_blank">Download CV</a>
-
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  </div>
+  <h1>Engr Farooq Ahmad</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=engrmfarooqahmad@gmail.com" target="_blank">Contact</a>
+  </nav>
 </header>
 
-<section id="home">
-  <div class="container hero">
-    <div class="hero-text">
-      <h1>I am M Farooq Ahmad</h1>
-      <h2>UI & UX <span>Designer</span></h2>
-      <p>Creative UI/UX Designer focused on clean and user-friendly digital experiences.</p>
-      <a href="https://www.upwork.com/freelancers/~018a1e37e779ab758a?mp_source=share" class="btn" target="_blank">Hire Me</a>
-    </div>
-
-    <div class="hero-img">
-      <img src="profile.jpg" alt="Farooq Ahmad">
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">Why You Hire Me</h2>
-    <div class="skills">
-      <div class="skill">UI Design<div class="bar"><div style="width:90%"></div></div></div>
-      <div class="skill">Graphic Design<div class="bar"><div style="width:85%"></div></div></div>
-      <div class="skill">Web Design<div class="bar"><div style="width:80%"></div></div></div>
-      <div class="skill">App Design<div class="bar"><div style="width:75%"></div></div></div>
-    </div>
-  </div>
+<section class="hero">
+  <h2>Creative Designer & UI/UX Specialist</h2>
+  <p>I design modern, user-focused digital experiences.</p>
 </section>
 
 <section id="services">
-  <div class="container">
-    <h2 class="section-title">My Services</h2>
-    <div class="service-grid">
-      <div class="service-card" onclick="mail()">Graphic Design<br><small>Creative branding solutions</small></div>
-      <div class="service-card" onclick="mail()">UI / UX Design<br><small>User-centered interfaces</small></div>
-      <div class="service-card" onclick="mail()">Web Design<br><small>Modern responsive websites</small></div>
-      <div class="service-card" onclick="mail()">App Design<br><small>Clean mobile UI</small></div>
-    </div>
+  <div class="services-title">
+    <h2>My Services</h2>
+    <p>Click any service to contact me directly via Gmail</p>
   </div>
-</section>
 
-<section id="portfolio">
-  <div class="container">
-    <h2 class="section-title">Latest Projects</h2>
-    <div class="project-grid">
-      <div class="project" onclick="openLink('https://www.figma.com/design/gGNoz3cJn51dNnxGoXalhA/Foods')">App Design</div>
-      <div class="project" onclick="openLink('https://www.figma.com/design/eumb6reWfEw5whNKfMNP1a/Farooq-portfolio')">Web Design</div>
-      <div class="project" onclick="openLink('https://www.figma.com/design/anP33idqVer328qFDPumMT/Ali-Shehzad-Web')">UI Design</div>
+  <div class="services-grid">
+    <div class="service-card" onclick="openMail()">
+      <h3>Graphic Design</h3>
+      <p>Creative branding and visual design solutions.</p>
     </div>
-  </div>
-</section>
 
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Let’s Make Something Together</h2>
-    <div class="contact-box">
-      <form action="https://formspree.io/f/xwkgrjnd" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button class="btn">Send Message</button>
-      </form>
+    <div class="service-card" onclick="openMail()">
+      <h3>UI / UX Design</h3>
+      <p>User-centered interfaces for web & mobile.</p>
+    </div>
 
-      <div>
-        <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
-        <p><strong>Phone:</strong> +92 314 1683402</p>
-      </div>
+    <div class="service-card" onclick="openMail()">
+      <h3>Web Design</h3>
+      <p>Modern, responsive website designs.</p>
+    </div>
+
+    <div class="service-card" onclick="openMail()">
+      <h3>App Design</h3>
+      <p>Clean and functional mobile app UI.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 M Farooq Ahmad — All Rights Reserved
+  <p>Contact: engrmfarooqahmad@gmail.com</p>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
-
-function openLink(url){
-  window.open(url,"_blank");
-}
-
-function mail(){
-  window.location.href="mailto:engrmfarooqahmad@gmail.com";
+function openMail(){
+  window.open(
+    "https://mail.google.com/mail/?view=cm&fs=1&to=engrmfarooqahmad@gmail.com",
+    "_blank"
+  );
 }
 </script>
 
