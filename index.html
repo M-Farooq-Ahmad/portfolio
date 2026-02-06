@@ -22,9 +22,7 @@
   font-family:'Poppins',sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
   background:var(--light);
@@ -32,16 +30,13 @@ body{
   line-height:1.6;
 }
 
-/* ===== COMMON ===== */
 .container{
   width:92%;
   max-width:1200px;
   margin:auto;
 }
 
-section{
-  padding:80px 0;
-}
+section{ padding:80px 0; }
 
 .section-title{
   text-align:center;
@@ -49,7 +44,7 @@ section{
   margin-bottom:50px;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -83,9 +78,7 @@ nav a{
   font-weight:500;
 }
 
-nav a:hover{
-  color:var(--primary);
-}
+nav a:hover{ color:var(--primary); }
 
 .btn{
   background:var(--primary);
@@ -97,9 +90,7 @@ nav a:hover{
   display:inline-block;
 }
 
-.btn:hover{
-  background:#6d2f8c;
-}
+.btn:hover{ background:#6d2f8c; }
 
 .hamburger{
   display:none;
@@ -107,7 +98,7 @@ nav a:hover{
   cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -115,18 +106,14 @@ nav a:hover{
   gap:40px;
 }
 
-.hero-text h1{
-  font-size:40px;
-}
+.hero-text h1{ font-size:40px; }
 
 .hero-text h2{
   font-size:32px;
   margin:10px 0;
 }
 
-.hero-text h2 span{
-  color:var(--primary);
-}
+.hero-text h2 span{ color:var(--primary); }
 
 .hero-text p{
   color:var(--gray);
@@ -139,15 +126,10 @@ nav a:hover{
   border-radius:25px;
 }
 
-/* ===== SKILLS ===== */
-.skills{
-  max-width:700px;
-  margin:auto;
-}
+/* SKILLS */
+.skills{ max-width:700px; margin:auto; }
 
-.skill{
-  margin-bottom:20px;
-}
+.skill{ margin-bottom:20px; }
 
 .bar{
   background:#eee;
@@ -162,7 +144,7 @@ nav a:hover{
   border-radius:10px;
 }
 
-/* ===== SERVICES ===== */
+/* SERVICES */
 .service-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -190,11 +172,9 @@ nav a:hover{
   transform:translateY(-6px);
 }
 
-.service-card:hover small{
-  color:#f1f1f1;
-}
+.service-card:hover small{ color:#f1f1f1; }
 
-/* ===== PROJECTS ===== */
+/* PROJECTS */
 .project-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -218,7 +198,7 @@ nav a:hover{
   transform:translateY(-6px);
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact-box{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -239,7 +219,7 @@ textarea{
   height:120px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   background:var(--primary);
   color:#fff;
@@ -247,7 +227,7 @@ footer{
   padding:20px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:768px){
   nav ul{
     position:absolute;
@@ -262,30 +242,20 @@ footer{
     border-bottom:1px solid #eee;
   }
 
-  nav ul.active{
-    display:flex;
-  }
+  nav ul.active{ display:flex; }
 
-  .hamburger{
-    display:block;
-  }
+  .hamburger{ display:block; }
 
   .hero{
     grid-template-columns:1fr;
     text-align:center;
   }
 
-  .hero-img{
-    order:-1;
-  }
+  .hero-img{ order:-1; }
 
-  .contact-box{
-    grid-template-columns:1fr;
-  }
+  .contact-box{ grid-template-columns:1fr; }
 
-  section{
-    padding:60px 0;
-  }
+  section{ padding:60px 0; }
 }
 </style>
 </head>
@@ -341,22 +311,10 @@ footer{
   <div class="container">
     <h2 class="section-title">My Services</h2>
     <div class="service-grid">
-      <div class="service-card" onclick="openGmail()">
-        Graphic Design
-        <small>Creative branding and visual design solutions.</small>
-      </div>
-      <div class="service-card" onclick="openGmail()">
-        UI / UX Design
-        <small>User-centered interfaces for web & mobile.</small>
-      </div>
-      <div class="service-card" onclick="openGmail()">
-        Web Design
-        <small>Modern, responsive website designs.</small>
-      </div>
-      <div class="service-card" onclick="openGmail()">
-        App Design
-        <small>Clean and functional mobile app UI.</small>
-      </div>
+      <div class="service-card" onclick="openGmail()">Graphic Design<small>Creative branding and visual design solutions.</small></div>
+      <div class="service-card" onclick="openGmail()">UI / UX Design<small>User-centered interfaces for web & mobile.</small></div>
+      <div class="service-card" onclick="openGmail()">Web Design<small>Modern, responsive website designs.</small></div>
+      <div class="service-card" onclick="openGmail()">App Design<small>Clean and functional mobile app UI.</small></div>
     </div>
   </div>
 </section>
@@ -375,9 +333,7 @@ footer{
 <section id="contact">
   <div class="container">
     <h2 class="section-title">Let’s Make Something Together</h2>
-
     <div class="contact-box">
-      <!-- CONTACT FORM -->
       <form onsubmit="sendMail(); return false;">
         <input type="text" id="name" placeholder="Your Name" required>
         <input type="email" id="email" placeholder="Your Email" required>
@@ -385,16 +341,7 @@ footer{
         <button type="submit" class="btn">Send Message</button>
       </form>
 
-      <!-- WHATSAPP BUTTON -->
-      <a href="https://wa.me/923141683402?text=Hi%20Farooq,%20I%20want%20to%20hire%20you!" 
-         target="_blank" 
-         class="btn" 
-         style="margin-top:10px; display:inline-block;">
-         Contact via WhatsApp
-      </a>
-
-      <!-- CONTACT INFO -->
-      <div style="margin-top:20px;">
+      <div>
         <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
         <p><strong>Phone:</strong> +92 314 1683402</p>
       </div>
@@ -416,28 +363,21 @@ function openLink(url){
 }
 
 function openGmail(){
-  window.open(
-    "https://mail.google.com/mail/?view=cm&fs=1&to=engrmfarooqahmad@gmail.com",
-    "_blank"
-  );
+  window.open("https://mail.google.com/mail/?view=cm&fs=1&to=engrmfarooqahmad@gmail.com","_blank");
 }
 
 function sendMail(){
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
+  let name=document.getElementById("name").value;
+  let email=document.getElementById("email").value;
+  let message=document.getElementById("message").value;
 
-  let gmailURL =
-    "https://mail.google.com/mail/?view=cm&fs=1" +
-    "&to=engrmfarooqahmad@gmail.com" +
-    "&su=Portfolio Contact from " + encodeURIComponent(name) +
-    "&body=" + encodeURIComponent(
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n\n" +
-      message
-    );
+  let gmailURL=
+    "https://mail.google.com/mail/?view=cm&fs=1"+
+    "&to=engrmfarooqahmad@gmail.com"+
+    "&su=Portfolio Contact from "+encodeURIComponent(name)+
+    "&body="+encodeURIComponent("Name: "+name+"\nEmail: "+email+"\n\n"+message);
 
-  window.open(gmailURL, "_blank");
+  window.open(gmailURL,"_blank");
 }
 </script>
 
