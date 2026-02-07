@@ -6,6 +6,7 @@
 <title>M Farooq Ahmad | UI/UX Designer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 :root{
@@ -13,6 +14,7 @@
   --dark:#222;
   --light:#ffffff;
   --gray:#555;
+  --transition: all 0.3s ease;
 }
 
 *{
@@ -36,11 +38,11 @@ body{
   margin:auto;
 }
 
-section{ padding:80px 0; }
+section{ padding:100px 0; }
 
 .section-title{
   text-align:center;
-  font-size:28px;
+  font-size:32px;
   margin-bottom:50px;
 }
 
@@ -61,7 +63,7 @@ header{
 }
 
 .logo{
-  font-size:22px;
+  font-size:24px;
   font-weight:700;
   color:var(--primary);
 }
@@ -76,6 +78,7 @@ nav a{
   text-decoration:none;
   color:#333;
   font-weight:500;
+  transition: var(--transition);
 }
 
 nav a:hover{ color:var(--primary); }
@@ -83,14 +86,22 @@ nav a:hover{ color:var(--primary); }
 .btn{
   background:var(--primary);
   color:#fff;
-  padding:10px 24px;
+  padding:12px 28px;
   border-radius:25px;
   text-decoration:none;
   font-size:14px;
   display:inline-block;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
 }
 
-.btn:hover{ background:#6d2f8c; }
+.btn:hover{ 
+    background:#6d2f8c; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
 
 .hamburger{
   display:none;
@@ -98,18 +109,23 @@ nav a:hover{ color:var(--primary); }
   cursor:pointer;
 }
 
-/* HERO */
+/* HERO SECTION - FIXED ALIGNMENT */
 .hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  gap: 60px;
 }
 
-.hero-text h1{ font-size:40px; }
+.hero-text{
+  flex: 1;
+}
+
+.hero-text h1{ font-size:48px; line-height: 1.2; }
 
 .hero-text h2{
-  font-size:32px;
+  font-size:36px;
   margin:10px 0;
 }
 
@@ -117,29 +133,37 @@ nav a:hover{ color:var(--primary); }
 
 .hero-text p{
   color:var(--gray);
-  margin:18px 0 28px;
+  margin:20px 0 35px;
+  font-size: 18px;
+}
+
+/* HERO IMAGE - INCREASED SIZE & ALIGNMENT */
+.hero-img{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Pushes image to the right edge of container */
 }
 
 .hero-img img{
-  width:100%;
-  max-width:320px;
-  border-radius:25px;
+  width: 100%;
+  max-width: 450px; /* Increased size for desktop */
+  height: auto;
+  border-radius: 30px;
+  /* Optional: filter or shadow if you want it to pop */
+  transition: var(--transition);
 }
 
 /* SKILLS */
 .skills{ max-width:700px; margin:auto; }
-
-.skill{ margin-bottom:20px; }
-
+.skill{ margin-bottom:20px; font-weight: 500; }
 .bar{
   background:#eee;
-  height:8px;
+  height:10px;
   border-radius:10px;
-  margin-top:6px;
+  margin-top:8px;
 }
-
 .bar div{
-  height:8px;
+  height:10px;
   background:var(--primary);
   border-radius:10px;
 }
@@ -147,76 +171,115 @@ nav a:hover{ color:var(--primary); }
 /* SERVICES */
 .service-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
 }
-
 .service-card{
   border:1px solid #eee;
-  padding:30px;
+  padding:40px 30px;
   border-radius:16px;
   background:#fff;
   cursor:pointer;
-  transition:0.3s;
+  transition: var(--transition);
 }
-
 .service-card small{
   display:block;
-  margin-top:8px;
+  margin-top:12px;
   color:#777;
 }
-
 .service-card:hover{
   background:var(--primary);
   color:#fff;
-  transform:translateY(-6px);
+  transform:translateY(-10px);
 }
-
 .service-card:hover small{ color:#f1f1f1; }
 
 /* PROJECTS */
 .project-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
 }
-
 .project{
-  padding:50px 20px;
+  padding:60px 20px;
   background:#fff;
   border:1px solid #eee;
   border-radius:16px;
   text-align:center;
   font-weight:600;
   cursor:pointer;
-  transition:0.3s;
+  transition: var(--transition);
 }
-
 .project:hover{
   background:var(--primary);
   color:#fff;
-  transform:translateY(-6px);
+  transform:translateY(-10px);
 }
 
-/* CONTACT */
+/* CONTACT SECTION - NEW SOCIAL LINKS */
 .contact-box{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:50px;
+  align-items: start;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-item {
+    text-decoration: none;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.social-item i {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.social-item:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.social-item:hover i {
+    color: #fff;
 }
 
 input, textarea{
   width:100%;
-  padding:14px;
+  padding:16px;
   border-radius:8px;
-  border:1px solid #ccc;
-  margin-bottom:14px;
-  font-size:14px;
+  border:1px solid #ddd;
+  margin-bottom:15px;
+  font-size:15px;
+  outline-color: var(--primary);
 }
 
 textarea{
   resize:none;
-  height:120px;
+  height:150px;
 }
 
 /* FOOTER */
@@ -224,10 +287,16 @@ footer{
   background:var(--primary);
   color:#fff;
   text-align:center;
-  padding:20px;
+  padding:30px;
+  margin-top: 50px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE FIXES */
+@media(max-width:992px){
+    .hero-text h1 { font-size: 38px; }
+    .hero-img img { max-width: 350px; }
+}
+
 @media(max-width:768px){
   nav ul{
     position:absolute;
@@ -238,23 +307,25 @@ footer{
     flex-direction:column;
     align-items:center;
     display:none;
-    padding:20px 0;
+    padding:30px 0;
     border-bottom:1px solid #eee;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
   }
 
   nav ul.active{ display:flex; }
-
   .hamburger{ display:block; }
 
   .hero{
-    grid-template-columns:1fr;
+    flex-direction: column-reverse;
     text-align:center;
+    padding: 40px 0;
+    gap: 30px;
   }
 
-  .hero-img{ order:-1; }
+  .hero-img{ justify-content: center; }
+  .hero-img img { max-width: 300px; }
 
   .contact-box{ grid-template-columns:1fr; }
-
   section{ padding:60px 0; }
 }
 </style>
@@ -341,16 +412,31 @@ footer{
         <button type="submit" class="btn">Send Message</button>
       </form>
 
-      <div>
-        <p><strong>Email:</strong> engrmfarooqahmad@gmail.com</p>
-        <p><strong>Phone:</strong> +92 314 1683402</p>
+       <div class="contact-info">
+        <p><i class="fas fa-phone" style="color:var(--primary)"></i> <strong>Phone:</strong> +92 314 1683402</p>
+         
+        <div class="social-links">
+            <a href="https://wa.me/923141683402" class="social-item" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/farooq-baloch/" class="social-item" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/M-Farooq-Ahmad" class="social-item" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" onclick="openGmail(); return false;" class="social-item">
+                <i class="fas fa-at"></i> Gmail
+              
+            </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 M Farooq Ahmad — All Rights Reserved
+  © 2026 M Farooq Ahmad — All Rights Reserved
 </footer>
 
 <script>
